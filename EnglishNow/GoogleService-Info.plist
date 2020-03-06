@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>739198071080-lifu8v3vb2hi8rglrp5gbvfh9gvlta4b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.739198071080-lifu8v3vb2hi8rglrp5gbvfh9gvlta4b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCUTCKikZ6ZYIX2-tI4RKfZG4X_dJGhstY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>739198071080</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tandemup.itok</string>
+	<key>PROJECT_ID</key>
+	<string>itok-8033b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>itok-8033b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:739198071080:ios:3155fc105300268391601d</string>
+	<key>DATABASE_URL</key>
+	<string>https://itok-8033b.firebaseio.com</string>
+</dict>
+</plist>
