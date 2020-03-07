@@ -28,10 +28,12 @@ class ChatViewController: UITableViewController {
         loadMessage()
         if  revealViewController() != nil {
             btnMenu.target = self.revealViewController()
-            btnMenu.action = "revealToggle:"
+            btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
             
             self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         }
+        
+        self.tabBarController?.hidesBottomBarWhenPushed = true
     }
 
     override func didReceiveMemoryWarning() {

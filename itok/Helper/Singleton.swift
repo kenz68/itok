@@ -13,7 +13,7 @@ class Singleton{
     var partner: User!
     var tabBarController:UITabBarController!
     var tokBoxSessionId: String!
-    var tokBoxApiKey: String! = "45900432"
+    var tokBoxApiKey: String! = "46528932"
     var conversationViewController: MyConversationVC?
     var chatViewController: ChatViewController?
     var matchViewController: MatchViewController?

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1320486C24137E4F000F6B69 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320486A24137E4F000F6B69 /* UserTableViewCell.swift */; };
+		1320486D24137E4F000F6B69 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1320486B24137E4F000F6B69 /* UserTableViewCell.xib */; };
+		1320487024138B3F000F6B69 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320486F24138B3F000F6B69 /* Extension.swift */; };
 		1338CCFC2412B82600A24AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1338CC932412B82600A24AF0 /* Assets.xcassets */; };
 		1338CCFE2412B82600A24AF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1338CC972412B82600A24AF0 /* GoogleService-Info.plist */; };
 		1338CCFF2412B82600A24AF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338CC9A2412B82600A24AF0 /* ChatViewController.swift */; };
@@ -122,6 +125,9 @@
 
 /* Begin PBXFileReference section */
 		02145C59EF30588575289FE7 /* Pods-itok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itok.release.xcconfig"; path = "Target Support Files/Pods-itok/Pods-itok.release.xcconfig"; sourceTree = "<group>"; };
+		1320486A24137E4F000F6B69 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1320486B24137E4F000F6B69 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		1320486F24138B3F000F6B69 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1338CC932412B82600A24AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1338CC972412B82600A24AF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1338CC9A2412B82600A24AF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +250,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1320486924137E24000F6B69 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				1320486A24137E4F000F6B69 /* UserTableViewCell.swift */,
+				1320486B24137E4F000F6B69 /* UserTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		1320486E24138B29000F6B69 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1320486F24138B3F000F6B69 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1338CC922412B82600A24AF0 /* itok */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +295,7 @@
 		1338CC982412B82600A24AF0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1320486E24138B29000F6B69 /* Extension */,
 				1338CC992412B82600A24AF0 /* Chat */,
 				1338CC9D2412B82600A24AF0 /* Auth */,
 				1338CCA22412B82600A24AF0 /* SlideMenuViewController.swift */,
@@ -334,6 +358,7 @@
 		1338CCAC2412B82600A24AF0 /* HomeTimeline */ = {
 			isa = PBXGroup;
 			children = (
+				1320486924137E24000F6B69 /* cell */,
 				1338CCAD2412B82600A24AF0 /* DetailStatusVC.swift */,
 				1338CCAE2412B82600A24AF0 /* CreateNewPostController.swift */,
 				1338CCAF2412B82600A24AF0 /* HomeTimeLineVC.swift */,
@@ -640,6 +665,7 @@
 				FA07574F1ED18C5D006CE695 /* Contents.json in Resources */,
 				1338CD232412B82600A24AF0 /* PlayRecord.xib in Resources */,
 				FA0757651ED18C5D006CE695 /* Icon-Small-50x50@2x.png in Resources */,
+				1320486D24137E4F000F6B69 /* UserTableViewCell.xib in Resources */,
 				FA0757531ED18C5D006CE695 /* Icon-App-29x29@1x.png in Resources */,
 				FA07575F1ED18C5D006CE695 /* Icon-App-72x72@2x.png in Resources */,
 				FA0757521ED18C5D006CE695 /* Icon-App-20x20@3x.png in Resources */,
@@ -742,6 +768,7 @@
 				1338CD422412B82600A24AF0 /* DataUtils.swift in Sources */,
 				1338CD3D2412B82600A24AF0 /* Recorder.swift in Sources */,
 				1338CD412412B82600A24AF0 /* FirebaseUtils.swift in Sources */,
+				1320486C24137E4F000F6B69 /* UserTableViewCell.swift in Sources */,
 				1338CD1B2412B82600A24AF0 /* Status.swift in Sources */,
 				1338CD342412B82600A24AF0 /* CommentCell.swift in Sources */,
 				1338CD1A2412B82600A24AF0 /* Comment.swift in Sources */,
@@ -755,6 +782,7 @@
 				1338CD3B2412B82600A24AF0 /* AppDelegate.swift in Sources */,
 				1338CD0A2412B82600A24AF0 /* ProfileVC.swift in Sources */,
 				1338CD0E2412B82600A24AF0 /* CreateNewPostController.swift in Sources */,
+				1320487024138B3F000F6B69 /* Extension.swift in Sources */,
 				1338CD162412B82600A24AF0 /* Listening.swift in Sources */,
 				1338CD112412B82600A24AF0 /* Contact.swift in Sources */,
 				1338CD3A2412B82600A24AF0 /* Dialog.swift in Sources */,

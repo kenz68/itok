@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9uR-lw-jB3">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9uR-lw-jB3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,7 +29,6 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Kh-cF-1sg">
                                         <rect key="frame" x="47" y="16" width="241" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
@@ -49,7 +44,6 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AsP-MG-1vp">
                                         <rect key="frame" x="47" y="16" width="241" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -78,7 +72,7 @@
                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nef-As-E0g"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="English Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-NF-60s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iTok" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-NF-60s">
                                 <rect key="frame" x="111" y="117" width="153" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="hf0-yj-clN"/>
@@ -142,20 +136,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+            <point key="canvasLocation" x="20" y="157"/>
         </scene>
         <!--Login PopupVC-->
         <scene sceneID="rE6-cx-k6D">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="peh-Yl-gss" customClass="LoginPopupVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="peh-Yl-gss" customClass="LoginPopupVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="bZb-hm-lbh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3FN-J9-sAV">
+                        <view key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3FN-J9-sAV">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-H0-mrq">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-H0-mrq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <connections>
                                         <action selector="btnDismiss:" destination="pfV-6q-59m" eventType="touchUpInside" id="If8-Gr-hpH"/>
@@ -277,7 +271,7 @@
         <!--Sign UpVC-->
         <scene sceneID="jo6-0E-YmQ">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="pfV-6q-59m" customClass="SignUpVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="pfV-6q-59m" customClass="SignUpVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="ats-OY-m1T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -402,7 +396,7 @@
         <!--Loading View Controller-->
         <scene sceneID="Vqr-DM-pdp">
             <objects>
-                <viewController id="9uR-lw-jB3" customClass="LoadingViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9uR-lw-jB3" customClass="LoadingViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oST-3D-C1h"/>
                         <viewControllerLayoutGuide type="bottom" id="ep0-My-oTi"/>
@@ -411,20 +405,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km8-Sm-cEo">
-                                <rect key="frame" x="35" y="282" width="306" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iTok" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km8-Sm-cEo">
+                                <rect key="frame" x="138.5" y="290.5" width="98" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="53"/>
                                 <color key="textColor" red="0.054901960780000002" green="0.62745098040000002" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn English anytime from anywhere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqJ-Bn-23I">
-                                <rect key="frame" x="45" y="346" width="286" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-Tr-9wu">
-                                <rect key="frame" x="168" y="337" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="336.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6h7-w1-qRe"/>
                                     <constraint firstAttribute="width" constant="40" id="GJi-YS-PfV"/>
@@ -433,18 +421,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VKf-Tr-9wu" firstAttribute="top" secondItem="km8-Sm-cEo" secondAttribute="bottom" id="HSK-Je-4WK"/>
                             <constraint firstItem="VKf-Tr-9wu" firstAttribute="centerX" secondItem="km8-Sm-cEo" secondAttribute="centerX" id="PbI-eh-6a8"/>
                             <constraint firstItem="km8-Sm-cEo" firstAttribute="centerX" secondItem="lvQ-E2-hEr" secondAttribute="centerX" id="T6M-7s-rnk"/>
-                            <constraint firstItem="GqJ-Bn-23I" firstAttribute="top" secondItem="km8-Sm-cEo" secondAttribute="bottom" id="bQX-tZ-9gG"/>
-                            <constraint firstItem="GqJ-Bn-23I" firstAttribute="centerX" secondItem="km8-Sm-cEo" secondAttribute="centerX" id="jTg-7a-zqU"/>
+                            <constraint firstItem="ep0-My-oTi" firstAttribute="top" secondItem="VKf-Tr-9wu" secondAttribute="bottom" constant="290.5" id="X0z-eo-MQ2"/>
                             <constraint firstItem="km8-Sm-cEo" firstAttribute="centerY" secondItem="lvQ-E2-hEr" secondAttribute="centerY" constant="-20" id="pA9-aJ-TIw"/>
-                            <constraint firstItem="VKf-Tr-9wu" firstAttribute="top" secondItem="GqJ-Bn-23I" secondAttribute="bottom" constant="-30" id="yhx-do-bb9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="VKf-Tr-9wu" id="qAh-Uy-fG3"/>
                         <outlet property="logoLabel" destination="km8-Sm-cEo" id="UIR-lb-pAX"/>
-                        <outlet property="sloganLabel" destination="GqJ-Bn-23I" id="Gdz-WM-hkv"/>
                         <segue destination="peh-Yl-gss" kind="show" identifier="SegueLoadToLoginPopup" id="vpn-jC-n4s"/>
                     </connections>
                 </viewController>
@@ -459,6 +445,6 @@
         <image name="iconUser" width="192" height="192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YZz-TU-ZNh"/>
+        <segue reference="vpn-jC-n4s"/>
     </inferredMetricsTieBreakers>
 </document>

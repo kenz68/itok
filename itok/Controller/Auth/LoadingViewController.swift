@@ -12,7 +12,6 @@ import FirebaseAuth
 
 class LoadingViewController: UIViewController {
     @IBOutlet weak var logoLabel: UILabel!
-    @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -21,7 +20,6 @@ class LoadingViewController: UIViewController {
         loadingIndicator.startAnimating()
         UIView.animate(withDuration: 0.5, animations: {
             self.logoLabel.transform = CGAffineTransform(translationX: 0, y: -40)
-            self.sloganLabel.transform = CGAffineTransform(translationX: 0, y: -40)
         }, completion: {finished in
             UIView.animate(withDuration: 0.3, animations: {
                 self.loadingIndicator.layer.opacity = 1
@@ -63,8 +61,9 @@ class LoadingViewController: UIViewController {
         })
         
         FirebaseClient.shared.handleReviews()
-        var storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
+        let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MainScreenVC") as UIViewController
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
     }
 }

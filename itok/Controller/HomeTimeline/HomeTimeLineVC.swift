@@ -22,6 +22,8 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var txtNoStatusNotify: UILabel!
     
     var statusList: [Status] = [Status]()
+    var contactList: [Contact] = [Contact]()
+    let cellID = "UserTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
         initShow()
         loadData()
+        loadUsers()
         
             
         // Do any additional setup after loading the view.
@@ -39,7 +42,7 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if  revealViewController() != nil {
             btnMenu.target = self.revealViewController()
-            btnMenu.action = "revealToggle:"
+            btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
             
             self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         }
@@ -51,6 +54,7 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
     func initShow(){
         table.delegate = self
         table.dataSource = self
+        table.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
     }
     
     //MARK: -load data
@@ -178,6 +182,38 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     
+    func loadUsers() {
+        Database.database().reference().child("user_profile").observeSingleEvent(of: .value, with:{ (snapshot) in
+            for item in snapshot.children {
+                let receiveUser = item as! DataSnapshot
+                let uid = receiveUser.key
+                let userDict = receiveUser.value as! [String:AnyObject]
+                let username = userDict["username"] as! String
+                let url = userDict["profile_pic"]
+                
+                if let imgUrl =  URL(string: url as! String) {
+                    let data = try? Data(contentsOf: imgUrl)
+                    if data != nil {
+                        let profilePic = UIImage(data: data!)
+                        let avatar = profilePic
+                        self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
+                        self.table.reloadData()
+                    }else{
+                        //set default image for avatar
+                        let avatar = UIImage(named: ResourceName.avatarPlaceholder)
+                        self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
+                        self.table.reloadData()
+                    }
+                } else {
+                    let avatar = UIImage(named: ResourceName.avatarPlaceholder)
+                    self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
+                    self.table.reloadData()
+                }
+            }
+        })
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -186,68 +222,72 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //MARK: -table datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        //return statusList.count
+        return contactList.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath ) as! CellOfTimeLineVC
-        //cell.layer.borderWidth = 1
-        //cell.layer.borderColor = UIColor(red: 213/255,green: 216/255,blue: 220/255,alpha: 1.0).cgColor
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath ) as! CellOfTimeLineVC
+//        //cell.layer.borderWidth = 1
+//        //cell.layer.borderColor = UIColor(red: 213/255,green: 216/255,blue: 220/255,alpha: 1.0).cgColor
+//
+//
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowColor = UIColor(red: 213/255,green: 216/255,blue: 220/255,alpha: 1.0).cgColor
+//        cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+//        cell.layer.shadowOpacity = 1.0
+//        cell.layer.shadowRadius = 0.0
+//
+//        let status = statusList[statusList.count - 1 - indexPath.row]
+//
+//        cell.status = status
+//
+//        cell.txtContent.text = status.content
+//        let number:Int = status.likeNumber!
+//        cell.txtNumberOfLike.text = "\(number)"
+//        cell.avatar.image = status.avatar
+//        cell.txtName.text = status.username
+//
+//        var milliseconds = status.time
+//
+//        let date = NSDate(timeIntervalSince1970: TimeInterval(milliseconds!))
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+//        formatter.locale = NSLocale(localeIdentifier: "en_US") as Locale?
+//        cell.txtTime.text = formatter.string(from: date as Date)
+//
+//        if status.photo != nil {
+//            cell.photo.isHidden = false
+//            cell.photoBigHeightAnchor?.isActive = true
+//            cell.photoSmallHeightAnchor?.isActive = false
+//            cell.photo.image = status.photo
+//        }else {
+//            cell.photo.isHidden = true
+//            cell.photoSmallHeightAnchor?.isActive = true
+//            cell.photoBigHeightAnchor?.isActive = false
+//        }
+//
+//        if status.isUserLiked == true {
+//            cell.btnLike.setBackgroundImage(UIImage(named: "liked.png"), for: .normal)
+//        } else {
+//            cell.btnLike.setBackgroundImage(UIImage(named: "like.png"), for: .normal)
+//        }
         
-        
-        cell.layer.masksToBounds = false
-        cell.layer.shadowColor = UIColor(red: 213/255,green: 216/255,blue: 220/255,alpha: 1.0).cgColor
-        cell.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.shadowRadius = 0.0
-        
-        let status = statusList[statusList.count - 1 - indexPath.row]
-        
-        cell.status = status
-        
-        cell.txtContent.text = status.content
-        let number:Int = status.likeNumber!
-        cell.txtNumberOfLike.text = "\(number)"
-        cell.avatar.image = status.avatar
-        cell.txtName.text = status.username
-        
-        var milliseconds = status.time
-        
-        let date = NSDate(timeIntervalSince1970: TimeInterval(milliseconds!))
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        formatter.locale = NSLocale(localeIdentifier: "en_US") as Locale?
-        cell.txtTime.text = formatter.string(from: date as Date)
-        
-        if status.photo != nil {
-            cell.photo.isHidden = false
-            cell.photoBigHeightAnchor?.isActive = true
-            cell.photoSmallHeightAnchor?.isActive = false
-            cell.photo.image = status.photo
-        }else {
-            cell.photo.isHidden = true
-            cell.photoSmallHeightAnchor?.isActive = true
-            cell.photoBigHeightAnchor?.isActive = false
-        }
-        
-        if status.isUserLiked == true {
-            cell.btnLike.setBackgroundImage(UIImage(named: "liked.png"), for: .normal)
-        } else {
-            cell.btnLike.setBackgroundImage(UIImage(named: "like.png"), for: .normal)
-        }
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath ) as! UserTableViewCell
+        cell.render(contact: contactList[indexPath.row])
+        cell.delegate = self
         return cell
-
     }
     
     
     var selectedIndex: Int = 0
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = statusList.count - 1 - indexPath.row
-        performSegue(withIdentifier: "SegueDetailStatus", sender: self)
+        //selectedIndex = statusList.count - 1 - indexPath.row
+        //performSegue(withIdentifier: "SegueDetailStatus", sender: self)
+        let contact = contactList[indexPath.row]
+        displayDetailMessage(contact: contact)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -261,15 +301,33 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //auto size of cell to fit content
     override func viewWillAppear(_ animated: Bool) {
-        self.table.estimatedRowHeight = 200
+        self.table.estimatedRowHeight = 60//200
         self.table.rowHeight = UITableView.automaticDimension
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueDetailStatus" {
-            let des = segue.destination as! DetailStatusVC
-            des.status = statusList[selectedIndex]
-        }
+//        if segue.identifier == "SegueDetailStatus" {
+//            let des = segue.destination as! DetailStatusVC
+//            des.status = statusList[selectedIndex]
+//        }
+    }
+    
+}
+
+extension HomeTimeLineVC: userCellDelegate {
+    func call(contact: Contact) {
+        
+    }
+    
+    func call(username: String) {
+        print("call \(username)")
+    }
+    
+    func displayDetailMessage(contact: Contact) {
+        let sb = UIStoryboard(name: "MainScreen", bundle: nil)
+        guard let detailVC = sb.instantiateViewController(withIdentifier: "detailChatViewController") as? DetailChatViewController else { return }
+        detailVC.currentContact = contact
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
 }

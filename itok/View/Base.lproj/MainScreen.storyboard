@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Find-->
+        <!--Calls-->
         <scene sceneID="EiG-sB-Vg9">
             <objects>
-                <viewController storyboardIdentifier="MatchViewController" id="cAD-xr-hfX" customClass="MatchViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MatchViewController" id="cAD-xr-hfX" customClass="MatchViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FfA-Qx-6QT"/>
                         <viewControllerLayoutGuide type="bottom" id="TGx-2B-y0Y"/>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="31" y="51" width="706" height="922"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-2Q-HJu">
-                                        <rect key="frame" x="0.0" y="0.0" width="706" height="922"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="706" height="922.00000000000023"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHF-VS-iaY">
                                         <rect key="frame" x="0.0" y="0.0" width="706" height="922"/>
@@ -47,27 +47,27 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-su-sfC">
-                                <rect key="frame" x="266" y="424" width="236.5" height="176"/>
+                                <rect key="frame" x="374" y="432" width="20" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findBgButton" translatesAutoresizingMaskIntoConstraints="NO" id="QQz-hF-ina">
-                                        <rect key="frame" x="43" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="-65" y="0.0" width="150" height="150"/>
                                     </imageView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHY-Kl-em5">
-                                        <rect key="frame" x="43" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="-65" y="0.0" width="150" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CHY-Kl-em5" secondAttribute="height" multiplier="1:1" id="V2x-2e-vJ4"/>
                                             <constraint firstAttribute="width" constant="150" id="gq6-50-wR8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
-                                        <state key="normal" title="Find">
+                                        <state key="normal" title="Call">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onMatchButton:" destination="cAD-xr-hfX" eventType="touchUpInside" id="ohp-UA-t5f"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let find a speaker and practice english" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-ER-vnY">
-                                        <rect key="frame" x="10" y="160" width="216.5" height="16"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-ER-vnY">
+                                        <rect key="frame" x="10" y="160" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                             <constraint firstItem="E7o-7v-hg1" firstAttribute="centerX" secondItem="LIp-TR-661" secondAttribute="centerX" id="pSE-9U-Wn7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Find" image="find.png" id="VZy-UQ-eAv"/>
+                    <tabBarItem key="tabBarItem" title="Calls" image="conversation" id="VZy-UQ-eAv"/>
                     <connections>
                         <outlet property="blurView" destination="E7o-7v-hg1" id="VAB-RY-n3d"/>
                         <outlet property="matchButton" destination="CHY-Kl-em5" id="Tpp-Bh-YuV"/>
@@ -114,17 +114,17 @@
         <!--Profile-->
         <scene sceneID="Yu7-nv-YMJ">
             <objects>
-                <viewController id="l4f-hQ-Lx7" customClass="ProfileVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l4f-hQ-Lx7" customClass="ProfileVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OvH-Go-VmW"/>
                         <viewControllerLayoutGuide type="bottom" id="Xdg-Yz-ZCf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kdH-oh-JkO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="980"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9j-b0-Gfw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="980"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDi-7m-czx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
@@ -568,7 +568,7 @@
                                         <rect key="frame" x="0.0" y="709" width="375" height="242"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="129" id="so4-Ox-VRQ" customClass="CellOfTimeLineVC" customModule="EnglishNow" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="129" id="so4-Ox-VRQ" customClass="CellOfTimeLineVC" customModule="itok" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="129"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="so4-Ox-VRQ" id="BFQ-2y-ffb">
@@ -675,13 +675,13 @@
         <!--Chat list-->
         <scene sceneID="5mb-FC-hSF">
             <objects>
-                <tableViewController storyboardIdentifier="ChatViewController" id="Hcq-cZ-P29" customClass="ChatViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChatViewController" id="Hcq-cZ-P29" customClass="ChatViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f4I-p0-pgb">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChatCell" id="3Uk-kk-G8u" customClass="ContactCell" customModule="EnglishNow" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChatCell" id="3Uk-kk-G8u" customClass="ContactCell" customModule="itok" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Uk-kk-G8u" id="aOQ-Qv-Y4h">
@@ -756,7 +756,7 @@
         <!--Create new message-->
         <scene sceneID="4ZG-Pu-YWU">
             <objects>
-                <collectionViewController id="anN-jq-Dqd" customClass="CreateMessageController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="anN-jq-Dqd" customClass="CreateMessageController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="X2x-Or-4CM">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -791,9 +791,9 @@
         <!--Detail Chat View Controller-->
         <scene sceneID="WX5-E8-hzM">
             <objects>
-                <collectionViewController id="0De-eo-9Jk" customClass="DetailChatViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="detailChatViewController" id="0De-eo-9Jk" customClass="DetailChatViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wtU-6E-VIc">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="86C-UO-EuD">
@@ -829,7 +829,7 @@
         <!--My ConversationVC-->
         <scene sceneID="ZZP-qq-NN1">
             <objects>
-                <viewController storyboardIdentifier="ConversationViewController" id="ObV-NS-UM6" customClass="MyConversationVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConversationViewController" id="ObV-NS-UM6" customClass="MyConversationVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBS-g9-UyB"/>
                         <viewControllerLayoutGuide type="bottom" id="hBD-De-0I9"/>
@@ -842,7 +842,7 @@
                                 <rect key="frame" x="0.0" y="36" width="375" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="250" id="Ldf-T6-cqk" customClass="HistoryCell" customModule="EnglishNow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="250" id="Ldf-T6-cqk" customClass="HistoryCell" customModule="itok" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ldf-T6-cqk" id="Wy5-D1-XfL">
@@ -978,17 +978,17 @@
         <!--Detail Status-->
         <scene sceneID="azQ-1d-kw4">
             <objects>
-                <viewController id="M7B-vi-xR2" customClass="DetailStatusVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M7B-vi-xR2" customClass="DetailStatusVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="adG-d6-nXo"/>
                         <viewControllerLayoutGuide type="bottom" id="6zR-po-APT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="efZ-vz-q45">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="996"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1016"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Axi-7G-BHG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="996"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="966"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-k1-WQ1">
                                         <rect key="frame" x="0.0" y="-64" width="375" height="952"/>
@@ -1027,23 +1027,23 @@
             </objects>
             <point key="canvasLocation" x="2140" y="-1555.3223388305848"/>
         </scene>
-        <!--Home Timeline-->
+        <!--Contacts-->
         <scene sceneID="uCg-wv-BW4">
             <objects>
-                <viewController storyboardIdentifier="HomeTimeLine" id="KXO-JK-0kR" customClass="HomeTimeLineVC" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTimeLine" id="KXO-JK-0kR" customClass="HomeTimeLineVC" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eke-GT-AFb"/>
                         <viewControllerLayoutGuide type="bottom" id="bOM-xP-aYH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Oq3-VP-mum">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-bd-1LS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="47" id="T81-ei-4th" customClass="CellOfTimeLineVC" customModule="EnglishNow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="47" id="T81-ei-4th" customClass="CellOfTimeLineVC" customModule="itok" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T81-ei-4th" id="0QH-fF-xb3">
@@ -1071,13 +1071,8 @@
                             <constraint firstItem="LD8-bd-1LS" firstAttribute="top" secondItem="Oq3-VP-mum" secondAttribute="top" id="q1t-60-jXF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Timeline" id="e7x-yr-WpS">
+                    <navigationItem key="navigationItem" title="Contacts" id="e7x-yr-WpS">
                         <barButtonItem key="leftBarButtonItem" image="hamburger.png" id="wC1-fz-Gno"/>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="33R-Jx-0s1">
-                            <connections>
-                                <segue destination="anA-DY-nVo" kind="push" id="IWK-Oa-alD"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnMenu" destination="wC1-fz-Gno" id="Ofe-DY-cGg"/>
@@ -1093,13 +1088,13 @@
         <!--Create new post-->
         <scene sceneID="Nvr-BY-tVK">
             <objects>
-                <viewController id="anA-DY-nVo" customClass="CreateNewPostController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="anA-DY-nVo" customClass="CreateNewPostController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nfu-jv-OoU"/>
                         <viewControllerLayoutGuide type="bottom" id="fzc-n7-6sc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="15o-0V-Z5t">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Acl-re-wSd">
@@ -1245,7 +1240,6 @@
                         <segue destination="Ot0-NT-Xpr" kind="relationship" relationship="viewControllers" id="T96-Sy-GmG"/>
                         <segue destination="cAD-xr-hfX" kind="relationship" relationship="viewControllers" id="3L7-pq-pkU"/>
                         <segue destination="jDG-OR-pyg" kind="relationship" relationship="viewControllers" id="Kzq-kg-leg"/>
-                        <segue destination="fTg-wY-B0O" kind="relationship" relationship="viewControllers" id="YLW-iL-3zD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4q-nY-hpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1307,11 +1301,11 @@
             </objects>
             <point key="canvasLocation" x="3177" y="1670"/>
         </scene>
-        <!--My Conversation-->
+        <!--Settings-->
         <scene sceneID="sud-gl-gad">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fTg-wY-B0O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Conversation" image="conversation.png" id="ySF-e5-BT3"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="conversation.png" id="ySF-e5-BT3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ygy-SS-iZW">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
@@ -1326,11 +1320,11 @@
             </objects>
             <point key="canvasLocation" x="1468" y="295.50224887556226"/>
         </scene>
-        <!--Home time line-->
+        <!--Contacts-->
         <scene sceneID="0Ms-YZ-wgf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ot0-NT-Xpr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home time line" image="hometimelineIcon.png" id="14z-D5-Ggg"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="contacts" id="14z-D5-Ggg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A1z-jg-745">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
@@ -1348,7 +1342,7 @@
         <!--Slide Menu View Controller-->
         <scene sceneID="Rd0-re-wQu">
             <objects>
-                <viewController id="jCc-yn-vt6" customClass="SlideMenuViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jCc-yn-vt6" customClass="SlideMenuViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BBD-ol-s3x"/>
                         <viewControllerLayoutGuide type="bottom" id="UAT-13-JX9"/>
@@ -1515,7 +1509,7 @@
         <!--Call View Controller-->
         <scene sceneID="9bu-hI-dg9">
             <objects>
-                <viewController id="as9-a1-KR6" customClass="CallViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="as9-a1-KR6" customClass="CallViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmb-Pj-g4o"/>
                         <viewControllerLayoutGuide type="bottom" id="EGF-sq-VUz"/>
@@ -1661,7 +1655,7 @@
         <!--Rating View Controller-->
         <scene sceneID="D2a-qg-3GB">
             <objects>
-                <viewController storyboardIdentifier="RatingViewController" id="sly-Gb-j3H" customClass="RatingViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RatingViewController" id="sly-Gb-j3H" customClass="RatingViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WJT-ea-h4N"/>
                         <viewControllerLayoutGuide type="bottom" id="Hzn-ZI-chO"/>
@@ -1707,7 +1701,7 @@
         <!--Detail-->
         <scene sceneID="a0h-k9-r67">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Iww-tb-Ubf" customClass="DetailViewController" customModule="EnglishNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Iww-tb-Ubf" customClass="DetailViewController" customModule="itok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fbt-fj-xFM"/>
                         <viewControllerLayoutGuide type="bottom" id="C4m-NC-mPp"/>
@@ -1717,7 +1711,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XiF-L4-fnh">
-                                <rect key="frame" x="0.0" y="50" width="768" height="924"/>
+                                <rect key="frame" x="0.0" y="50" width="768" height="974"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -1770,12 +1764,12 @@
         <image name="block_video_call" width="24" height="24"/>
         <image name="blurCover" width="852" height="480"/>
         <image name="chaticon.png" width="29" height="29"/>
+        <image name="contacts" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="conversation" width="32" height="32"/>
         <image name="conversation.png" width="40" height="40"/>
-        <image name="find.png" width="40" height="40"/>
         <image name="findBgButton" width="150" height="150"/>
         <image name="hamburger.png" width="16" height="16"/>
         <image name="hangup" width="24" height="24"/>
-        <image name="hometimelineIcon.png" width="29" height="29"/>
         <image name="iconPhoto" width="400" height="400"/>
         <image name="logout" width="512" height="512"/>
         <image name="microphone" width="24" height="24"/>
@@ -1784,10 +1778,9 @@
         <image name="video_call" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IWK-Oa-alD"/>
-        <segue reference="Eug-0u-lKY"/>
-        <segue reference="xq2-7O-fxz"/>
-        <segue reference="gSf-PI-xLv"/>
+        <segue reference="aeV-sY-fDI"/>
+        <segue reference="jCh-0p-EZx"/>
+        <segue reference="aPb-qN-zga"/>
         <segue reference="VBk-PL-vlc"/>
         <segue reference="scf-XQ-Z3w"/>
     </inferredMetricsTieBreakers>
