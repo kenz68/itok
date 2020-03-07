@@ -1,4 +1,4 @@
-# Final Project - *English Now*
+# Final Project - *iTok*
 
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f73a48f33e314c88abef8b7a4dae85df)](https://www.codacy.com/app/nhoxbypass/EnglishNow?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HCMUS-AssignmentWarehouse/EnglishNow&amp;utm_campaign=Badge_Grade)
