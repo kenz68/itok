@@ -183,34 +183,41 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadUsers() {
-        Database.database().reference().child("user_profile").observeSingleEvent(of: .value, with:{ (snapshot) in
-            for item in snapshot.children {
-                let receiveUser = item as! DataSnapshot
-                let uid = receiveUser.key
-                let userDict = receiveUser.value as! [String:AnyObject]
-                let username = userDict["username"] as! String
-                let url = userDict["profile_pic"]
-                
-                if let imgUrl =  URL(string: url as! String) {
-                    let data = try? Data(contentsOf: imgUrl)
-                    if data != nil {
-                        let profilePic = UIImage(data: data!)
-                        let avatar = profilePic
-                        self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
-                        self.table.reloadData()
-                    }else{
-                        //set default image for avatar
-                        let avatar = UIImage(named: ResourceName.avatarPlaceholder)
-                        self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
-                        self.table.reloadData()
+        guard let user = Auth.auth().currentUser else { return }
+        Database
+            .database()
+            .reference()
+            .child("user_profile")
+            .observeSingleEvent(of: .value, with:{ (snapshot) in
+                for item in snapshot.children {
+                    let receiveUser = item as! DataSnapshot
+                    let uid = receiveUser.key
+                    let userDict = receiveUser.value as! [String:AnyObject]
+                    let username = userDict["username"] as! String
+                    let url = userDict["profile_pic"]
+                    
+                    if uid != user.uid {
+                        if let imgUrl =  URL(string: url as! String) {
+                            let data = try? Data(contentsOf: imgUrl)
+                            if data != nil {
+                                let profilePic = UIImage(data: data!)
+                                let avatar = profilePic
+                                self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
+                                self.table.reloadData()
+                            }else{
+                                //set default image for avatar
+                                let avatar = UIImage(named: ResourceName.avatarPlaceholder)
+                                self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
+                                self.table.reloadData()
+                            }
+                        } else {
+                            let avatar = UIImage(named: ResourceName.avatarPlaceholder)
+                            self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
+                            self.table.reloadData()
+                        }
                     }
-                } else {
-                    let avatar = UIImage(named: ResourceName.avatarPlaceholder)
-                    self.contactList.append(Contact(name:username,id: uid,avatar: avatar! , lastestText: ""))
-                    self.table.reloadData()
                 }
-            }
-        })
+            })
         
     }
     

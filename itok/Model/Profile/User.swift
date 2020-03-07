@@ -66,17 +66,18 @@ class User: NSObject, NSCoding {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        uid = aDecoder.decodeObject(forKey: "uid") as! String
-        type = UserType(rawValue: aDecoder.decodeObject(forKey: "type") as! Int)
-        name = aDecoder.decodeObject(forKey: "name") as! String
-        email = aDecoder.decodeObject(forKey: "email") as! String
-        password = aDecoder.decodeObject(forKey: "password") as! String
-        profilePhoto = aDecoder.decodeObject(forKey: "profilePhoto") as! String
-        conversations = aDecoder.decodeObject(forKey: "conversations") as! Int
-        totalHours = aDecoder.decodeObject(forKey: "totalHours") as! Double
-        rating = aDecoder.decodeObject(forKey: "rating") as! Double
-        review = aDecoder.decodeObject(forKey: "review") as! Review
-        reviews = aDecoder.decodeObject(forKey: "reviews") as! [Review]
+        uid = aDecoder.decodeObject(forKey: "uid") as? String
+        let i = aDecoder.decodeObject(forKey: "type") as? Int
+        type = UserType(rawValue: i ?? 0)
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        email = aDecoder.decodeObject(forKey: "email") as? String
+        password = aDecoder.decodeObject(forKey: "password") as? String
+        profilePhoto = aDecoder.decodeObject(forKey: "profilePhoto") as? String
+        conversations = aDecoder.decodeObject(forKey: "conversations") as? Int
+        totalHours = aDecoder.decodeObject(forKey: "totalHours") as? Double
+        rating = aDecoder.decodeObject(forKey: "rating") as? Double
+        review = aDecoder.decodeObject(forKey: "review") as? Review
+        reviews = aDecoder.decodeObject(forKey: "reviews") as? [Review]
     }
     
     //    func initUser(){

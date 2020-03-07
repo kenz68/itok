@@ -23,7 +23,7 @@
                                 <rect key="frame" x="31" y="51" width="706" height="922"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-2Q-HJu">
-                                        <rect key="frame" x="0.0" y="0.0" width="706" height="922.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="706" height="922"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHF-VS-iaY">
                                         <rect key="frame" x="0.0" y="0.0" width="706" height="922"/>
