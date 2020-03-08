@@ -91,7 +91,7 @@ class HomeTimeLineVC: UIViewController, UITableViewDataSource, UITableViewDelega
                     }
                 }
                 
-                let queryRef = Database.database().reference().child("user_profile/\(user)").observe(.value, with: { (snapshot) -> Void in
+                let queryRef = Database.database().reference().child("\(FirebaseClass.userProfile)/\(user)").observe(.value, with: { (snapshot) -> Void in
                     
                     if let dictionary = snapshot.value as? [String:Any] {
                         

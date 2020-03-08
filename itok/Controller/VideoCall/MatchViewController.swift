@@ -104,7 +104,7 @@ class MatchViewController: UIViewController {
             
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.fromValue = 0
-            animation.toValue = CGFloat(M_PI * 2.0)
+            animation.toValue = CGFloat(.pi * 2.0)
             animation.duration = 1
             animation.repeatCount = Float.infinity
             matchButtonBgImageView.layer.add(animation, forKey: "rotate")

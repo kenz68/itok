@@ -86,7 +86,7 @@ class ChatViewController: UITableViewController {
     func retrieveUser(id:String , lastestText: String){
         var username:String = "no name"
         
-       Database.database().reference().child("user_profile").observeSingleEvent(of: .value, with:{ (snapshot) in
+        Database.database().reference().child(FirebaseClass.userProfile).observeSingleEvent(of: .value, with:{ (snapshot) in
         
         //go to each user
         for item in snapshot.children {

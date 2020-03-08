@@ -47,7 +47,7 @@ class FirebaseClient {
             if !exist {
                 completion(false)
             } else {
-                self.dataReference.child("user_profile/\(User.current.uid!)").observeSingleEvent(of: .value, with: {(snapshot) in
+                self.dataReference.child("\(FirebaseClass.userProfile)/\(User.current.uid!)").observeSingleEvent(of: .value, with: {(snapshot) in
                     if let dictionary = snapshot.value as? NSDictionary {
                         
                         User.current.name = dictionary["username"] as? String
@@ -96,7 +96,7 @@ class FirebaseClient {
     func signUp(email: String, password: String, userName: String, skills: [Skill], completion: @escaping (Firebase.User?, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if let user = user {
-                let userRef = Database.database().reference().child("user_profile").child((user.user.uid))
+                let userRef = Database.database().reference().child(FirebaseClass.userProfile).child((user.user.uid))
                 userRef.child("username").setValue(userName)
                 userRef.child("email").setValue(email)
                 userRef.child("password").setValue(password)
@@ -184,10 +184,10 @@ class FirebaseClient {
             if let learners = snapshot.value as? NSDictionary {
                 print(learners)
                 if let learnerInfo = learners[learners.allKeys[0]] as? NSDictionary {
-                    Singleton.sharedInstance.partner.name = learnerInfo["name"] as! String
-                    Singleton.sharedInstance.partner.rating = learnerInfo["rating"] as! Double
-                    Singleton.sharedInstance.partner.uid = learnerInfo["uid"] as! String
-                    Singleton.sharedInstance.partner.profilePhoto = learnerInfo["photo"] as! String
+                    Singleton.sharedInstance.partner.name = learnerInfo["name"] as? String
+                    Singleton.sharedInstance.partner.rating = learnerInfo["rating"] as? Double
+                    Singleton.sharedInstance.partner.uid = learnerInfo["uid"] as? String
+                    Singleton.sharedInstance.partner.profilePhoto = learnerInfo["photo"] as? String
                     Singleton.sharedInstance.partner.type = UserType.learner
                     self.createSession(completion: completion)
                 }
@@ -208,7 +208,7 @@ class FirebaseClient {
     }
     
     func createSession(completion: @escaping (_ session: String, _ token: String) -> Void) {
-                dataReference.child("user_profile/\(Singleton.sharedInstance.partner.uid!)/username").observeSingleEvent(of: .value, with: {snapshot in
+                dataReference.child("\(FirebaseClass.userProfile)/\(Singleton.sharedInstance.partner.uid!)/username").observeSingleEvent(of: .value, with: {snapshot in
                     Singleton.sharedInstance.partner.name = snapshot.value as! String
                 })
         var roomName : String = Singleton.sharedInstance.partner.uid + User.current.uid
@@ -222,13 +222,13 @@ class FirebaseClient {
                 let dictionary = ["session_id" : sessionId,
                                   "speaker_token": speakerToken,
                                   "learner_token": learnerToken,
-                                  "learnerUid": Singleton.sharedInstance.partner.uid,
-                                  "learnerName": Singleton.sharedInstance.partner.name,
-                                  "learnerRating": Singleton.sharedInstance.partner.rating,
-                                  "speakerUid": User.current.uid,
-                                  "speakerName": User.current.name,
+                                  "learnerUid": Singleton.sharedInstance.partner.uid ?? "",
+                                  "learnerName": Singleton.sharedInstance.partner.name ?? "",
+                                  "learnerRating": Singleton.sharedInstance.partner.rating ?? "",
+                                  "speakerUid": User.current.uid ?? "",
+                                  "speakerName": User.current.name ?? "",
                                   "speakerRating": User.current.speakerAverageRatings(),
-                                  "speakerPhoto": User.current.profilePhoto] as [String : Any]
+                                  "speakerPhoto": User.current.profilePhoto ?? [:]] as [String : Any]
                 self.dataReference.child("sessions/\(sessionId)").updateChildValues(dictionary)
                 self.dataReference.child("available/learners/\(Singleton.sharedInstance.partner.uid!)").updateChildValues(["matched": sessionId])
                 completion(sessionId, speakerToken)

@@ -54,7 +54,7 @@ class LoginPopupVC: UIViewController {
     func initShowUser(){
         if let user = Auth.auth().currentUser{
             
-            let queryRef = Database.database().reference().child("user_profile/\(user.uid)").observe(.value, with: { (snapshot) -> Void in
+            let queryRef = Database.database().reference().child("\(FirebaseClass.userProfile)/\(user.uid)").observe(.value, with: { (snapshot) -> Void in
                 
                 if let dictionary = snapshot.value as? [String:Any] {
                     let username = dictionary["username"] as? String ?? ""

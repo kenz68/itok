@@ -396,8 +396,8 @@ class DetailStatusVC: UIViewController , UITableViewDelegate, UITableViewDataSou
                 print("status?.user: \(status?.user)")
                 print("status?.statusId: \(status?.statusId)")
                 print("user.uid: \(user.uid)")
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(true)
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(true)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
                 status?.isUserLiked = true
                 status?.likeNumber = likeNumber
                 
@@ -418,8 +418,8 @@ class DetailStatusVC: UIViewController , UITableViewDelegate, UITableViewDataSou
                 txtLikeNumber.text = "\(likeNumber)" + " LIKES"
                 
                 
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(false)
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(false)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
                 
                 
                 status?.isUserLiked = false
@@ -443,7 +443,7 @@ class DetailStatusVC: UIViewController , UITableViewDelegate, UITableViewDataSou
             
             if let user = Auth.auth().currentUser{
                 
-                let queryRef = Database.database().reference().child("user_profile/\(user.uid)").observe(.value, with: { (snapshot) -> Void in
+                let queryRef = Database.database().reference().child("\(FirebaseClass.userProfile)/\(user.uid)").observe(.value, with: { (snapshot) -> Void in
                     
                     if let dictionary = snapshot.value as? [String:Any] {
                         let username = dictionary["username"] as? String ?? ""
@@ -517,7 +517,7 @@ class DetailStatusVC: UIViewController , UITableViewDelegate, UITableViewDataSou
                         let commentId = (item as! DataSnapshot).key as! String
                         var userAvatar: UIImage = UIImage(named: ResourceName.avatarPlaceholder)!
                         
-                        let queryRef = Database.database().reference().child("user_profile/\(userId)").observe(.value, with: { (snapshot) -> Void in
+                        let queryRef = Database.database().reference().child("\(FirebaseClass.userProfile)/\(userId)").observe(.value, with: { (snapshot) -> Void in
                             
                             if let dictionary = snapshot.value as? [String:Any] {
                                 

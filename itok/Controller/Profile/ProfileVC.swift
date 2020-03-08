@@ -105,8 +105,8 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate , UINavigatio
                 var rate_value = (totalRating) / Float((skillNumberRating[(tag - 1) / 5] + 1))
                 
                 print("rate_value: \(rate_value)")
-                Database.database().reference().child("user_profile").child((currentID)).child("skill").child(skills[(tag - 1) / 5].name).child("rate_value").setValue(rate_value)
-                Database.database().reference().child("user_profile").child((currentID)).child("skill").child(skills[(tag - 1) / 5].name).child("rate_list").child(user.uid).setValue((tag - 1) % 5 + 1)
+                Database.database().reference().child(FirebaseClass.userProfile).child((currentID)).child("skill").child(skills[(tag - 1) / 5].name).child("rate_value").setValue(rate_value)
+                Database.database().reference().child(FirebaseClass.userProfile).child((currentID)).child("skill").child(skills[(tag - 1) / 5].name).child("rate_list").child(user.uid).setValue((tag - 1) % 5 + 1)
                 
             }
             
@@ -179,7 +179,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate , UINavigatio
                     let alertController = UIAlertController(title: "Question", message: "Are you sure delete this status?", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
                         
-                            Database.database().reference().child("user_profile/\(user.uid)").child("status").observe(.value, with: { (snapshot) -> Void in
+                            Database.database().reference().child("\(FirebaseClass.userProfile)/\(user.uid)").child("status").observe(.value, with: { (snapshot) -> Void in
                                 
                                 //go  to each status
                                 for item in snapshot.children {
@@ -237,7 +237,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate , UINavigatio
             currentID = userid
         }
         
-        Database.database().reference().child("user_profile/\(currentID)").child("status").observe(.value, with: { (snapshot) -> Void in
+        Database.database().reference().child("\(FirebaseClass.userProfile)/\(currentID)").child("status").observe(.value, with: { (snapshot) -> Void in
             
             self.statusList.removeAll()
             
@@ -315,7 +315,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate , UINavigatio
         if currentID == ""{
             currentID = userid
         }
-        let queryRef = Database.database().reference().child("user_profile/\(currentID)").observe(.value, with: { (snapshot) -> Void in
+        let queryRef = Database.database().reference().child("\(FirebaseClass.userProfile)/\(currentID)").observe(.value, with: { (snapshot) -> Void in
                 
             if let dictionary = snapshot.value as? [String:Any] {
                 //TODO: ReCheck the stats
@@ -366,7 +366,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate , UINavigatio
         })
         
         //load data of level
-        Database.database().reference().child("user_profile/\(currentID)").child("skill").observe(.value, with: { (snapshot) -> Void in
+        Database.database().reference().child("\(FirebaseClass.userProfile)/\(currentID)").child("skill").observe(.value, with: { (snapshot) -> Void in
             
             let child = snapshot.value as! [String:AnyObject]
             let listening = (snapshot.childSnapshot(forPath: "listening skill") as! DataSnapshot).value as! [String:Any]
@@ -601,7 +601,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate , UINavigatio
                             print("upload image falure!")
                             return
                         }
-                        databaseRef.child("user_profile").child((currentUser?.uid)!).child("profile_pic").setValue(url?.absoluteString)
+                        databaseRef.child(FirebaseClass.userProfile).child((currentUser?.uid)!).child("profile_pic").setValue(url?.absoluteString)
                         
                         
                         print("upload image success!")

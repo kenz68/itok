@@ -304,7 +304,7 @@ class CreateMessageController: UICollectionViewController, UITextFieldDelegate, 
             
         } else {
             
-            Database.database().reference().child("user_profile").observeSingleEvent(of: .value, with:{ (snapshot) in
+            Database.database().reference().child(FirebaseClass.userProfile).observeSingleEvent(of: .value, with:{ (snapshot) in
                 
                 var done:Int = 0
                 

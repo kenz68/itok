@@ -175,8 +175,8 @@ class CellOfTimeLineVC: UITableViewCell {
                 print("status?.user: \(status?.user)")
                 print("status?.statusId: \(status?.statusId)")
                 print("user.uid: \(user.uid)")
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(true)
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(true)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
                 status?.isUserLiked = true
                 status?.likeNumber = likeNumber
                 
@@ -197,8 +197,8 @@ class CellOfTimeLineVC: UITableViewCell {
                 txtNumberOfLike.text = "\(likeNumber)"
                 
                 
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(false)
-                Database.database().reference().child("user_profile").child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like").child(user.uid).setValue(false)
+                Database.database().reference().child(FirebaseClass.userProfile).child((status?.user)!).child("status").child((status?.statusId)!).child("like_number").setValue(likeNumber)
                 
                 
                 status?.isUserLiked = false

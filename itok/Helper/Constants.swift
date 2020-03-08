@@ -25,3 +25,13 @@ struct ResourceName {
     static let coverPlaceholder = "cover_placeholder.png"
     static let partnerAvatarPlaceholder = "partner_avatar_placeholder.png"
 }
+
+struct FirebaseClass {
+    static let userProfile = "user_profile"
+    static let data = "data"
+    static let message = "message"
+    static let privateMessage = "private"
+    static let sessions = "sessions"
+    static let status = "status"
+
+}

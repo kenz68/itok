@@ -28,12 +28,9 @@ class SlideMenuViewController: UIViewController {
     @IBAction func btnLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            let user = Auth.auth().currentUser
-            
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC") as UIViewController
             self.present(controller, animated: true, completion: nil)
-            
         } catch {
             print("there was an error when logout!")
         }
@@ -61,7 +58,7 @@ class SlideMenuViewController: UIViewController {
     func initShowUser(){
         if let user = Auth.auth().currentUser{
             
-            let queryRef = Database.database().reference().child("user_profile/\(user.uid)").observe(.value, with: { (snapshot) -> Void in
+            let queryRef = Database.database().reference().child("\(FirebaseClass.userProfile)/\(user.uid)").observe(.value, with: { (snapshot) -> Void in
                 
                 if let dictionary = snapshot.value as? [String:Any] {
                     let username = dictionary["username"] as? String ?? ""

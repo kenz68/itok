@@ -67,7 +67,7 @@ class CreateNewPostController: UIViewController , UIImagePickerControllerDelegat
                                     statusRef.child("like_number").setValue(0)
                                     statusRef.child("username").setValue(self.username.text)
                                     //save to user_root
-                                    let userRef = databaseRef.child("user_profile").child((currentUser?.uid)!).child("status").childByAutoId()
+                                    let userRef = databaseRef.child(FirebaseClass.userProfile).child((currentUser?.uid)!).child("status").childByAutoId()
                                     userRef.child("photo").setValue(downloadUrl.absoluteString)
                                     userRef.child("content").setValue(self.txtContent.text)
                                     userRef.child("time").setValue(Date.timeIntervalBetween1970AndReferenceDate)
@@ -99,7 +99,7 @@ class CreateNewPostController: UIViewController , UIImagePickerControllerDelegat
                 
                 guard let x = statusRef.key else { return }
                 
-                let userRef = databaseRef.child("user_profile").child((currentUser?.uid)!).child("status").child(x)
+                let userRef = databaseRef.child(FirebaseClass.userProfile).child((currentUser?.uid)!).child("status").child(x)
                 userRef.child("photo").setValue("")
                 userRef.child("content").setValue(self.txtContent.text)
                 userRef.child("time").setValue(Date.timeIntervalBetween1970AndReferenceDate)
@@ -166,7 +166,7 @@ class CreateNewPostController: UIViewController , UIImagePickerControllerDelegat
         
         let user = Auth.auth().currentUser
         
-        Database.database().reference().child("user_profile").child((user?.uid)!).observeSingleEvent(of: .value, with:{ (snapshot) in
+        Database.database().reference().child(FirebaseClass.userProfile).child((user?.uid)!).observeSingleEvent(of: .value, with:{ (snapshot) in
             
             let userDict = snapshot.value as! [String:AnyObject]
                 
