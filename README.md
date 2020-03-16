@@ -1,24 +1,14 @@
-# Final Project - *English Now*
+# iTok
 
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f73a48f33e314c88abef8b7a4dae85df)](https://www.codacy.com/app/nhoxbypass/EnglishNow?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HCMUS-AssignmentWarehouse/EnglishNow&amp;utm_campaign=Badge_Grade)
-
-**English Now** is an awesome iOS app create from Swift 5.0, OpenTok client sdk and NodeJS server, it allows a users to practice speaking, writing, chatting in English. By the time using this app, English level of users will be improved.
-
-Time spent: **90** hours spent in total
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f73a48f33e314c88abef8b7a4dae85df)](https://www.codacy.com/app/nhoxbypass/EnglishNow?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HCMUS-AssignmentWarehouse/EnglishNow&amp;utm_campaign=Badge_Grade
 
 ## User Stories
 
 The basic **required** functionality:
 
-* [x] Find a friend to practice speaking English throught video call
+* [x] Find a friend to practice speaking throught video call
 * [x] Chatting with other friends in English
-* [x] Writing/updating personal statuses, posts in English
-
-
-The **extended** features are implemented:
-
-* [ ] User can connect and share post/status with other social network.
 
 The **advance** features are implemented:
 
@@ -28,11 +18,11 @@ The **advance** features are implemented:
 ## Install libraries with Podfile
 
 Launch terminal, cd to the project's folder and type ``pod install`` to install needed libraries for this app.
-Then close XCode and open EnglishNow.xcodeworkspace to open it.
+Then close XCode and open itok.xcodeworkspace to open it.
 
 ## Quick deploy to Heroku
 
-Heroku is a PaaS (Platform as a Service) that can be used to deploy simple and small applications for free. To easily deploy **EnglishNow NodeJS server** repository to Heroku, sign up for a Heroku account and click this button:
+Heroku is a PaaS (Platform as a Service) that can be used to deploy simple and small applications for free. To easily deploy **itok NodeJS server** repository to Heroku, sign up for a Heroku account and click this button:
 
 <a href="https://heroku.com/deploy?template=https://github.com/opentok/learning-opentok-node/" target="_blank">
 <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
@@ -40,12 +30,6 @@ Heroku is a PaaS (Platform as a Service) that can be used to deploy simple and s
 
 Heroku will prompt you to add your OpenTok API key and OpenTok API secret, which you can
 obtain at the [TokBox Dashboard](https://dashboard.tokbox.com/keys).
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Sw4Gj1eF8is/0.jpg)](https://www.youtube.com/watch?v=Sw4Gj1eF8is)
 
 ## Notes
 
